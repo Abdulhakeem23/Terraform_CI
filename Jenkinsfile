@@ -9,12 +9,7 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/your-username/terraform-ci-project.git'
-            }
-        }
+        
 
         stage('Terraform Init') {
             steps {
@@ -34,13 +29,6 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
-            when {
-                branch 'main'
-            }
-            steps {
-                sh 'terraform apply -auto-approve'
-            }
-        }
+        
     }
 }
